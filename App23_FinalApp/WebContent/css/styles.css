@@ -1,0 +1,22 @@
+/* .InputCss{ */
+/* 	padding-left:30% */
+/* } */
+
+div[id="__field0"]{
+	padding-left:35% !important; 
+	width:65% !important;
+}
+
+div[id="searchField"],div[id="idList"],div[id="idDetailTable"]{
+	padding-left:10% !important; 
+	width:90% !important;
+}
+
+div[id="idBar"]{
+
+	width:100% !important;
+}
+/* .sapMFlexBoxAlignItemsStretch { */
+/*     align-items: center !important; */
+/*     justify-content: center !important; */
+/* } */ 
