@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+
+<script src="resources/sap-ui-core.js" id="sap-ui-bootstrap"
+	data-sap-ui-libs="sap.m,sap.ui.table,sap.ui.unified"
+	data-sap-ui-theme="sap_bluecrystal">
+	
+</script>
+<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+
+<script>
+	debugger;
+	// 				client = new XMLHttpRequest()
+	// 				var oModel = new sap.ui.model.json.JSONModel("http://fdreccdev.inside.fender:8000/sap/bc/dasa_jsonfmcall/zdasa_UI5_rfc_poc?carrid=LH&connid=400&json");
+	if (oModel == null) {
+		var oModel = new sap.ui.model.json.JSONModel(
+				"http://fdreccdev.inside.fender:8000/sap/bc/dasa_jsonfmcall/zdasa_UI5_rfc_poc?carrid=LH&connid=400",
+				"table");
+		sap.ui.getCore().setModel(oModel, "table");
+
+	}
+
+	var oCarrid = new sap.m.Input({
+		required : true,
+		placeholder : "Airline",
+		width : "50%",
+		submit : function() {
+			debugger;
+
+			// Table Bind
+
+		}
+	});
+
+	var oConnid = new sap.m.Input({
+		required : true,
+		placeholder : "Flight Number",
+		width : "50%"
+	});
+
+	var oTable = new sap.m.Table({
+		title : "Flights",
+
+		columns : [ new sap.m.Column({
+			header : new sap.m.Label({
+				text : "Airline"
+			})
+
+		}),
+
+		new sap.m.Column({
+			header : new sap.m.Label({
+				text : "Flight Number"
+			})
+		}),
+
+		new sap.m.Column({
+			header : new sap.m.Label({
+				text : "Currency"
+			})
+		}),
+
+		new sap.m.Column({
+			header : new sap.m.Label({
+				text : "Date"
+			})
+
+		}),
+
+		new sap.m.Column({
+			header : new sap.m.Label({
+				text : "Airfare"
+			})
+
+		}),
+
+		new sap.m.Column({
+			header : new sap.m.Label({
+				text : "Airline Currency"
+			})
+
+		}),
+
+		new sap.m.Column({
+			header : new sap.m.Label({
+				text : "Plane Type"
+			})
+
+		}),
+
+		new sap.m.Column({
+			header : new sap.m.Label({
+				text : "Max. capacity econ."
+			})
+
+		}),
+
+		new sap.m.Column({
+			header : new sap.m.Label({
+				text : "Occupied econ."
+			})
+
+		}),
+
+		new sap.m.Column({
+			header : new sap.m.Label({
+				text : "Total"
+			})
+
+		})
+
+		]
+	});
+
+	// Table item Appearance
+	var oTableItems = new sap.m.ColumnListItem({
+		title : "Flights",
+		cells : [ new sap.m.Text({
+			text : "{table>FLIGHTS_TAB/CARRID}"
+		}),
+
+		new sap.m.Text({
+			text : "{table>FLIGHTS_TAB/CONNID}"
+		}),
+
+		new sap.m.Text({
+			text : "{table>FLIGHTS_TAB/CURRENCY}"
+		}),
+
+		new sap.m.Text({
+			text : "{table>FLIGHTS_TAB/FLDATE}"
+		}),
+
+		new sap.ui.unified.Currency({
+			value : "{table>FLIGHTS_TAB/PRICE}",
+			currency : "MXN"
+		}),
+
+		new sap.m.Text({
+			text : "{table>FLIGHTS_TAB/CURRENCY}"
+		}),
+
+		new sap.m.Text({
+			text : "{table>FLIGHTS_TAB/PLANETYPE}"
+		}),
+
+		new sap.m.ObjectNumber({
+			number : "{table>FLIGHTS_TAB/SEATSMAX}"
+		}),
+
+		new sap.m.ObjectNumber({
+			number : "{table>FLIGHTS_TAB/SEATSOCC}"
+		}),
+
+		new sap.m.ObjectNumber({
+			number : "{table>FLIGHTS_TAB/PAYMENTSUM}"
+		})
+
+		]
+	});
+
+	oTable.bindItems({
+		path : "table>/FLIGHTS_TAB",
+		template : oTableItems
+	});
+
+	oCarrid.placeAt("content");
+	oConnid.placeAt("content");
+	oTable.placeAt("content");
+</script>
+
+</head>
+<body class="sapUiBody" role="application">
+	<div id="content"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+
+		<script src="resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-theme="sap_bluecrystal">
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+
+		<script>
+			var oLabel1 = new sap.m.Label({
+				text:"{/key1}"
+			});
+			
+			var oLabel2 = new sap.m.Label({
+				text:"{/key2}"
+			});
+			
+			var oData = {
+					"key1":"same Value",
+					"key2":"same more Value",
+			};
+			
+			var oModel = new sap.ui.model.json.JSONModel();
+			
+			oModel.setData(oData);
+			
+			oLabel1.setModel(oModel);
+			oLabel2.setModel(oModel);
+			
+			oLabel1.placeAt("content1");
+			oLabel2.placeAt("content2");
+		</script>
+
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content1"></div>
+		<div id="content2"></div>
+	</body>
+</html>

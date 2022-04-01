@@ -1,0 +1,115 @@
+.newForm {
+	
+	padding-left: 30% !important;
+	padding-top: 10% !important;
+	width: 70% !important;
+	overflow: auto !important;
+}
+
+/*
+div[id="__container0--RFLayout"] {
+	width: 80%;
+}
+
+div[id="__form0--Layout"] {
+	padding-left: 20% !important;
+}
+*/
+
+/*Simple form colour*/
+.TitleCss {
+	color: #2196f3 !important;
+}
+
+
+
+/*Element width*/
+.sapUiRFLContainer{
+	width: 100% !important;
+}
+
+/*
+div#__element0--content--RFLayout-row0,
+	#__element0--content--RFLayout-row1 {
+	height: auto;
+	display: block;
+	overflow: auto;
+}
+*/
+
+/* Asignar un limite de pantalla... esto es duh por que se puede centrar directamente con propiedades CSS
+
+@media screen and (max-width:600px){
+	.hBoxForm{
+		padding-left: 30%:
+	}
+}*/
+
+/*Centre - Align for VBox
+justify for HBox */
+.sapMFlexBoxAlignItemsStretch {
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/*Colour HboxBtn1 Blue through CSS
+#__button5-inner{
+	background: #2196f3;
+	color: white;
+}
+
+/*Colour HboxBtn1 Green 
+#__button6-inner{
+	background: green;
+	color: white;
+}
+
+
+/*
+.VBox{
+	align-content: center !important;
+	
+}
+
+.HBox{
+	justify-content: center !important;
+	
+}
+
+.RateCss {
+	
+}
+
+.TextCss {
+	
+}
+
+.DatePick {
+	
+}
+
+.UploaderCss {
+	
+}
+
+.BarCss {
+	
+}
+
+.VBoxBtnCss1{
+	
+}
+
+
+.VBoxBtnCss2{
+	
+}
+
+.HBoxCss {
+	
+}
+
+.HBoxCss {
+	
+}
+*/

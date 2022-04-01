@@ -1,0 +1,17 @@
+.newView{
+	
+	padding-left: 30% !important;
+	padding-top: 10% !important;
+	width: 70% !important;
+	overflow: auto !important;
+}
+
+/*Simple form colour*/
+.TitleCss {
+	color: #2196f3 !important;
+}
+
+/*Element width*/
+.sapUiRFLContainer{
+	width: 100% !important;
+}
